@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
 
-	def index
+	def tweet
 		if params[:tweet]
 			Twitter.update(params[:tweet])
 		end
