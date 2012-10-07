@@ -5,5 +5,9 @@ class TweetsController < ApplicationController
 			Twitter.update(params[:tweet])
 		end
 	end
+
+	def timeline
+		@listing = Twitter.home_timeline({:count =>100})
+	end
 end
 
