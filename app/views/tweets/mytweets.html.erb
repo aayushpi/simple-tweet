@@ -14,7 +14,7 @@
             </li>
             <li>
               <a href="#">
-                Refresh
+                Timeline
               </a>
             </li>
             <li>
@@ -26,12 +26,25 @@
         </div>
       </div>
     </div>
-    <form>
+    <div>
+      <ul>
+      <% @mytweets.each do |mytweets| %>
+        <div class="element">
+          <ul>
+            <li> <img src="<%= mytweets.user.profile_image_url =%>" /></li>
+            <li><%= mytweets.user.name =%> (<%= "@"+mytweets.user.screen_name =%>)</li>
+            <li><%= mytweets.text =%></li>
+            <li></li>
+          </ul>
+      <% end %>
+      </ul>
+    </div>
+<!--    <form>
       <div class="control-group">
       </div>
       <input name="tweet" type="text" value="Tweet this">
       <input type="submit"/>
-    </form>
+    </form> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
     </script>
     <script src="assets/js/bootstrap.js">

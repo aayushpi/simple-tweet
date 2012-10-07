@@ -28,12 +28,12 @@
     </div>
     <div>
       <ul>
-      <% @listing.each do |listing| %>
+      <% @mentions.each do |mentions| %>
         <div class="element">
           <ul>
-            <li> <img src="<%= listing.user.profile_image_url =%>" /></li>
-            <li><%= listing.user.name =%> (<%= "@"+listing.user.screen_name =%>)</li>
-            <li><%= listing.text =%></li>
+            <li> <img src="<%= mentions.user.profile_image_url =%>" /></li>
+            <li><%= mentions.user.name =%> (<%= "@"+mentions.user.screen_name =%>)</li>
+            <li><%= mentions.text =%></li>
             <li></li>
           </ul>
       <% end %>
