@@ -10,14 +10,13 @@ class SessionsController < ApplicationController
 			  config.oauth_token = request.env["omniauth.auth"]["credentials"]["token"]
 			  config.oauth_token_secret = request.env["omniauth.auth"]["credentials"]["secret"]
 			end
-			madness = ["omniauth.auth"]
-			#session[:user_id] = user.id
+			session[:user_id] = request.env["omniauth.auth"]["info"]["nickname"]
 			root_url = "http://simple-tweet.dev/tweets"
 			redirect_to root_url, notice: "Signed in!"
 	end
 
 	def signout
-		#session[:user_id] = nil
+		session[:user_id] = nil
 		root_url = "http://simple-tweet.dev/tweets"
 		redirect_to root_url, notice: "Signed in!"
 	end
