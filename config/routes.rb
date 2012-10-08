@@ -1,5 +1,5 @@
 SimpleTweet::Application.routes.draw do
-  root :to => 'Tweets#timeline'
+  root :to => 'tweets#timeline'
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'signout', to: 'sessions#signout', as: 'signout'
 
