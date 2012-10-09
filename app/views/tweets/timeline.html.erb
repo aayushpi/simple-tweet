@@ -2,12 +2,16 @@
       <ul>
       <% @listing.each do |listing| %>
         <div class="element">
-          <ul>
-            <li> <img src="<%= listing.user.profile_image_url =%>" /></li>
-            <li><%= listing.user.name =%> (<%= "@"+listing.user.screen_name =%>)</li>
-            <li><%= listing.text =%></li>
-            <li></li>
-          </ul>
+          <% if session[:user_id] %>
+            <ul>
+              <li> <img src="<%= listing.user.profile_image_url =%>" /></li>
+              <li><%= listing.user.name =%> (<%= "@"+listing.user.screen_name =%>)</li>
+              <li><%= listing.text =%></li>
+              <li></li>
+            </ul>
+          <% else %>
+          <p> Sign in first </p>
+          <% end %>
       <% end %>
       </ul>
     </div>
