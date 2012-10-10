@@ -19,27 +19,27 @@
             </b>
           </a>
         
-	<% if session[:user_id] %>
+<!--	<% if session[:user_id] %> -->
 		
 		<ul class="nav"> 
-            <li>
-              <%= link_to "Timeline", "./timeline" %>
-            </li>
-            <li>
-              <%= link_to "Mentions", "./mentions" %>
-            </li>
-            <li>
-              <%= link_to "My Tweets", "./mytweets" %>
-            </li>
-            <li>
-              <%= link_to "New Tweet", "./newtweet" %>
-            </li>
-          	<li>Signed in as <%= session[:user_id] =%></li>
-						<li><%= link_to "Sign out", "signout" %></li>
-						</ul>
-	<% else %>
+      <li>
+        <%= link_to "Timeline", "./timeline" %>
+      </li>
+      <li>
+        <%= link_to "Mentions", "./mentions" %>
+      </li>
+      <li>
+        <%= link_to "My Tweets", "./mytweets" %>
+      </li>
+      <li>
+        <%= link_to "New Tweet", "./newtweet" %>
+      </li>
+    	<li>Signed in as <%= session[:user_id] =%></li>
+  		<li><%= link_to "Sign out", "signout" %></li>
+  		</ul>
+<!-- 	<% else %> 
 		<%= link_to "Sign in with Twitter", "/auth/twitter/" %>
-	<% end %>
+	<% end %> -->
 	</div>
       </div>
     </div>	
