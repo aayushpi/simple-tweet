@@ -1,13 +1,15 @@
-    <div>
-      <ul>
+      <div>
+      
       <% @mentions.each do |mentions| %>
-        <div class="element">
-          <ul>
-            <li> <img src="<%= mentions.user.profile_image_url =%>" /></li>
-            <li><%= mentions.user.name =%> (<%= "@"+mentions.user.screen_name =%>)</li>
-            <li><%= mentions.text =%></li>
-            <li></li>
-          </ul>
+        <% if session[:user_id] %>
+          <div class="element">
+            <img src="<%= mentions.user.profile_image_url =%>" />
+            <h2><%= mentions.user.name =%> (<%= "@"+mentions.user.screen_name =%>)</h2>
+            <%= mentions.text =%>
+          </div>        
+          <% else %>
+          <p> Sign in first </p>
+          <% end %>
       <% end %>
       </ul>
     </div>

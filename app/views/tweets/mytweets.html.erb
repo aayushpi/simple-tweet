@@ -1,23 +1,26 @@
-<div>
-  <ul>
-    <% @mytweets.each do |mytweets| %>
-    <div class="element">
-      <ul>
-        <li> <img src="<%= mytweets.user.profile_image_url =%>" /></li>
-        <li><%= mytweets.user.name =%> (<%= "@"+mytweets.user.screen_name =%>)</li>
-        <li><%= mytweets.text =%></li>
-        <li></li>
+      <div>
+      
+      <% @mytweets.each do |mytweets| %>
+        <% if session[:user_id] %>
+          <div class="element">
+            <img src="<%= mytweets.user.profile_image_url =%>" />
+            <h2><%= mytweets.user.name =%> (<%= "@"+mytweets.user.screen_name =%>)</h2>
+            <%= mytweets.text =%>
+          </div>        
+          <% else %>
+          <p> Sign in first </p>
+          <% end %>
+      <% end %>
       </ul>
-    <% end %>
-  </ul>
-</div>
+    </div>
 <!--    <form>
-<div class="control-group">
-</div>
-<input name="tweet" type="text" value="Tweet this">
-<input type="submit"/>
-</form> -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
-</script>
-<script src="assets/js/bootstrap.js">
-</script>
+      <div class="control-group">
+      </div>
+      <input name="tweet" type="text" value="Tweet this">
+      <input type="submit"/>
+    </form> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+    </script>
+    <script src="assets/js/bootstrap.js">
+    </script>
+  

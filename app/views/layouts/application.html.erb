@@ -5,7 +5,6 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
 <body>
 
@@ -19,27 +18,28 @@
             </b>
           </a>
         
-<!--	<% if session[:user_id] %> -->
-		
-		<ul class="nav"> 
-      <li>
-        <%= link_to "Timeline", "#{root_url}tweets/timeline" %>
-      </li>
-      <li>
-        <%= link_to "Mentions", "#{root_url}tweets/mentions" %>
-      </li>
-      <li>
-        <%= link_to "My Tweets", "#{root_url}tweets/mytweets" %>
-      </li>
-      <li>
-        <%= link_to "New Tweet", "#{root_url}tweets/newtweet" %>
-      </li>
-    	<li>Signed in as <%= session[:user_id] =%></li>
-  		<li><%= link_to "Sign out", "signout" %></li>
-  		</ul>
-<!-- 	<% else %> 
-		<%= link_to "Sign in with Twitter", "/auth/twitter/" %>
-	<% end %> -->
+<% if session[:user_id] %>
+  <ul class="nav"> 
+    <li>
+      <%= link_to "Timeline", "#{root_url}tweets/timeline" %>
+    </li>
+    <li>
+      <%= link_to "Mentions", "#{root_url}tweets/mentions" %>
+    </li>
+    <li>
+      <%= link_to "My Tweets", "#{root_url}tweets/mytweets" %>
+    </li>
+    <li>
+      <%= link_to "New Tweet", "#{root_url}tweets/newtweet" %>
+    </li>
+  	
+    <li>Signed in as <%= session[:user_id] =%></li>
+
+  	<li><%= link_to "Sign out", "#{root_url}signout" %></li>
+	</ul>
+<% else %> 
+		<%= link_to "Sign in with Twitter", "#{root_url}auth/twitter/" %>
+<% end %>
 	</div>
       </div>
     </div>	
