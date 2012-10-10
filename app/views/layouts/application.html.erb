@@ -23,16 +23,16 @@
 		
 		<ul class="nav"> 
       <li>
-        <%= link_to "Timeline", "./timeline" %>
+        <%= link_to "Timeline", "#{root_url}tweets/timeline" %>
       </li>
       <li>
-        <%= link_to "Mentions", "./mentions" %>
+        <%= link_to "Mentions", "#{root_url}tweets/mentions" %>
       </li>
       <li>
-        <%= link_to "My Tweets", "./mytweets" %>
+        <%= link_to "My Tweets", "#{root_url}tweets/mytweets" %>
       </li>
       <li>
-        <%= link_to "New Tweet", "./newtweet" %>
+        <%= link_to "New Tweet", "#{root_url}tweets/newtweet" %>
       </li>
     	<li>Signed in as <%= session[:user_id] =%></li>
   		<li><%= link_to "Sign out", "signout" %></li>
