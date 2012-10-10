@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 			
 		session[:user_id] = request.env["omniauth.auth"]["info"]["nickname"]
 			#root_url = "http://simple-tweet.dev/tweets"
-		redirect_to root_url, notice: "Signed in!"
+		redirect_to timeline, notice: "Signed in!"
 	end
 
 	def signout

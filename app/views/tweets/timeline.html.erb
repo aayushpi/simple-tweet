@@ -4,7 +4,7 @@
           <div class="element">
             <img src="<%= listing.user.profile_image_url =%>" />
             <h2><%= listing.user.name =%> (<%= "@"+listing.user.screen_name =%>)</h2>
-            <%= linkup_mentions_and_hashtags(listing.text).html_safe %>
+            <%= linkify(listing.text).html_safe %> 
           </div>        
           <% else %>
           <p> Sign in first </p>
@@ -12,9 +12,4 @@
       <% end %>
       </ul>
     </div>
-<!--    <form>
-      <div class="control-group">
-      </div>
-      <input name="tweet" type="text" value="Tweet this">
-      <input type="submit"/>
-    </form> -->
+<!-- unsanitised user output:: check for -->
