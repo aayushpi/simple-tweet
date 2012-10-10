@@ -9,40 +9,21 @@
 <body>
 
 <!-- <%= link_to "Sign in with Twitter", "/auth/twitter/" %> -->
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="brand" href="#">
-            <b>
-              Simple Tweet
-            </b>
-          </a>
-        
+    <nav>
+      <h1><%= link_to "Simple Tweet", "#{root_url}" %></h1>        
 <% if session[:user_id] %>
-  <ul class="nav"> 
-    <li>
-      <%= link_to "Timeline", "#{root_url}tweets/timeline" %>
-    </li>
-    <li>
-      <%= link_to "Mentions", "#{root_url}tweets/mentions" %>
-    </li>
-    <li>
-      <%= link_to "My Tweets", "#{root_url}tweets/mytweets" %>
-    </li>
-    <li>
-      <%= link_to "New Tweet", "#{root_url}tweets/newtweet" %>
-    </li>
-  	
-    <li>Signed in as <%= session[:user_id] =%></li>
-
-  	<li><%= link_to "Sign out", "#{root_url}signout" %></li>
+  <ul> 
+    <li><%= link_to "Timeline", "#{root_url}tweets/timeline" %></li>
+    <li><%= link_to "Mentions", "#{root_url}tweets/mentions" %></li>
+    <li><%= link_to "My Tweets", "#{root_url}tweets/mytweets" %></li>
+    <li><%= link_to "New Tweet", "#{root_url}tweets/newtweet" %></li> 	
+    <li>Signed in as <%= session[:user_id] =%> (<%= link_to "Sign out", "#{root_url}signout" %>)</li>
 	</ul>
 <% else %> 
 		<%= link_to "Sign in with Twitter", "#{root_url}auth/twitter/" %>
 <% end %>
-	</div>
-      </div>
-    </div>	
+	</nav>
+      	
 <%= yield %>
 
 </body>

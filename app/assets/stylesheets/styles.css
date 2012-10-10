@@ -1,15 +1,22 @@
 body{
-	margin: 0;
-	padding: 0;
-	background-color: black;
+	background: url('/assets/use_your_illusion.png') black repeat;
 }
 #container{
+	width: 960px;
 	margin: 0 auto;
 }
+
+nav > h1{
+	width: 413px;
+	height: 61px;
+	background: url('/assets/logo.png') no-repeat;
+	text-indent: -9001px;
+}
+
 .element{
 
 background: #141414;
-width: 320px;
+width: 280px;
 font-family: serif;
 font-size: 16px;
 margin: 10px;
@@ -30,5 +37,21 @@ color: white;
 	font-size: 14px;
 	clear: right;
 	margin-left: 10px;
-
 }
+
+/* NAVIGATION */
+nav{
+	font-family: Helvetica, sans-serif;
+	font-weight: bold;
+}
+nav li{
+	display: inline;
+	margin: 0 30px 0 0;
+	color: white;
+}
+
+nav li a{
+	color: white;
+	text-decoration: none;
+}
+
